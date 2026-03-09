@@ -41,37 +41,64 @@
   </footer>
 
   <script>
-    const yearEl = document.getElementById('current-year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    const params = new URLSearchParams(window.location.search);
-    const sessionId = params.get('session_id');
-    const statusEl = document.getElementById('invoice-status');
-    const linkEl = document.getElementById('invoice-link');
-    const API_BASE = 'https://hot-haus.onrender.com';
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('session_id');
+  const statusEl = document.getElementById('invoice-status');
+  const linkEl = document.getElementById('invoice-link');
+  const API_BASE = 'https://hot-haus.onrender.com';
 
-    async function checkInvoice() {
-      if (!sessionId) {
-        statusEl.textContent = 'Missing session id. If you need an invoice, please contact support.';
-        return;
-      }
-      try {
-        const res = await fetch(`${API_BASE}/invoice?session_id=${encodeURIComponent(sessionId)}`);
-        if (!res.ok) throw new Error(await res.text());
-        const data = await res.json();
-        if (data.status === 'ready' && data.url) {
-          statusEl.textContent = 'Invoice ready.';
-          linkEl.href = data.url;
-          linkEl.style.display = 'inline-flex';
-        } else {
-          statusEl.textContent = 'Invoice is being generated. Please refresh in a moment.';
-        }
-      } catch (e) {
-        console.error(e);
-        statusEl.textContent = 'Could not load invoice status. Please contact support if you need an invoice.';
-      }
+  async function checkInvoice() {
+    if (!sessionId) {
+      statusEl.textContent = 'Missing session id. If you need an invoice, please contact support.';
+      return true;
     }
-    checkInvoice();
-  </script>
+
+    try {
+      const res = await fetch(`${API_BASE}/invoice?session_id=${encodeURIComponent(sessionId)}`);
+      if (!res.ok) throw new Error(await res.text());
+
+      const data = await res.json();
+
+      if (data.status === 'ready' && data.url) {
+        statusEl.textContent = 'Invoice ready.';
+        linkEl.href = data.url;
+        linkEl.style.display = 'inline-flex';
+        return true;
+      }
+
+      statusEl.textContent = 'Invoice is being generated. Please wait...';
+      return false;
+    } catch (e) {
+      console.error(e);
+      statusEl.textContent = 'Could not load invoice status. Please contact support if you need an invoice.';
+      return true;
+    }
+  }
+
+  async function pollInvoice() {
+    const done = await checkInvoice();
+    if (done) return;
+
+    let attempts = 0;
+    const maxAttempts = 20;
+
+    const timer = setInterval(async () => {
+      attempts++;
+      const ready = await checkInvoice();
+
+      if (ready || attempts >= maxAttempts) {
+        clearInterval(timer);
+        if (!ready) {
+          statusEl.textContent = 'Invoice is still being generated. Please refresh in a moment.';
+        }
+      }
+    }, 3000);
+  }
+
+  pollInvoice();
+</script>
 </body>
 </html>

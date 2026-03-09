@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', function() {
  * Frontend calls POST /create-checkout-session with the cart + email
  * Server returns { url } to redirect the customer.
  */
-const API_BASE = ''; // set to e.g. 'https://yourdomain.com' if your API is hosted separately
+const API_BASE = 'https://api.hothaus.ie'; // set to e.g. 'https://yourdomain.com' if your API is hosted separately
 
 async function startStripeCheckout(email) {
   cart = JSON.parse(localStorage.getItem('hothaus-cart') || '[]');

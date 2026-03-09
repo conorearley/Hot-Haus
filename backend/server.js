@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-
+import cors from 'cors';
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
@@ -15,10 +15,15 @@ const __dirname = path.dirname(__filename);
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || '';
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
 const PUBLIC_URL = process.env.PUBLIC_URL || 'http://localhost:4242';
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:4242';
 
 const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: '2025-01-27.acacia', maxNetworkRetries: 3 });
 
 const app = express();
+
+app.use(cors({
+  origin: ['https://hothaus.netlify.app', 'https://www.hothaus.ie', 'https://hothaus.ie']
+}));
 
 /* ---------------- EMAIL ---------------- */
 
@@ -221,8 +226,8 @@ app.post('/create-checkout-session', async (req, res) => {
       mode: 'payment',
       customer_email: email,
       line_items: lineItems,
-      success_url: `${PUBLIC_URL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${PUBLIC_URL}/cancel.html`,
+      success_url: `${FRONTEND_URL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${FRONTEND_URL}/cancel.html`,
       shipping_address_collection: { allowed_countries: ['IE'] },
       phone_number_collection: { enabled: true },
       metadata: { cart: JSON.stringify(cart) }
@@ -261,7 +266,7 @@ app.get('/invoice', (req, res) => {
   const record = idx[sessionId];
 
   if (record?.pdfFile) {
-    return res.json({ status: 'ready', url: `/invoices/${record.pdfFile}` });
+    return res.json({ status: 'ready', url: `${PUBLIC_URL}/invoices/${record.pdfFile}` });
   }
 
   return res.json({ status: 'pending' });

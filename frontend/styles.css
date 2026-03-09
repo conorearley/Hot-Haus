@@ -2251,3 +2251,14 @@ h1, h2, h3, h4, h5, h6 {
   color:#000;
   font-weight:600;
 }
+@media (max-width: 768px) {
+  .product-card-premium .product-card-image,
+  .product-card-premium .premium-image {
+    min-height: 260px;
+  }
+
+  .product-card-premium .product-image-wrapper img,
+  .product-card-premium .product-card-image img {
+    object-fit: cover;
+  }
+}

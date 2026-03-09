@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Successful - HotHaus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header" id="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo"><span class="logo-hot">Hot</span><span class="logo-haus">Haus</span></a>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container" style="max-width: 720px;">
+      <div class="section-header" style="text-align:left;">
+        <span class="section-tag">Thank you</span>
+        <h1 class="section-title">Payment Successful</h1>
+        <p class="section-subtitle">We've received your payment. You'll get an email receipt from Stripe. If you need a VAT-style invoice, download it below once it's ready. <hr> Please note if you do not recieve your email in 5-10 minutes please check your spam folder.</p>
+      </div>
+
+      <div class="card" style="padding: 1.25rem; border: 1px solid hsl(var(--border)); border-radius: 0.75rem; background: hsl(var(--card));">
+        <p id="invoice-status">Checking invoice status…</p>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+          <a class="btn btn-gold" id="invoice-link" href="#" style="display:none;">Download invoice (PDF)</a>
+          <a class="btn btn-outline" href="index.html">Continue shopping</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> HotHaus. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+    const statusEl = document.getElementById('invoice-status');
+    const linkEl = document.getElementById('invoice-link');
+
+    async function checkInvoice() {
+      if (!sessionId) {
+        statusEl.textContent = 'Missing session id. If you need an invoice, please contact support.';
+        return;
+      }
+      try {
+        const res = await fetch(`/invoice?session_id=${encodeURIComponent(sessionId)}`);
+        if (!res.ok) throw new Error(await res.text());
+        const data = await res.json();
+        if (data.status === 'ready' && data.url) {
+          statusEl.textContent = 'Invoice ready.';
+          linkEl.href = data.url;
+          linkEl.style.display = 'inline-flex';
+        } else {
+          statusEl.textContent = 'Invoice is being generated. Please refresh in a moment.';
+        }
+      } catch (e) {
+        console.error(e);
+        statusEl.textContent = 'Could not load invoice status. Please contact support if you need an invoice.';
+      }
+    }
+    checkInvoice();
+  </script>
+</body>
+</html>

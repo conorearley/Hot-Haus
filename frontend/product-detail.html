@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Hot Haus Saunas</title>
+  <meta name="description" content="View product details and customize your order with available upgrades.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header scrolled" id="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        Hot Haus <span class="logo-gold">Saunas</span>
+      </a>
+      
+      <nav class="nav-desktop">
+        <a href="index.html#saunas" class="nav-link">Saunas</a>
+        <a href="index.html#glamping" class="nav-link">Glamping Pods</a>
+        <a href="index.html#coldplunge" class="nav-link">Cold Plunge</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button" id="cart-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+          </svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+          <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="nav-mobile" id="mobile-menu">
+      <a href="index.html#saunas" class="nav-link">Saunas</a>
+      <a href="index.html#glamping" class="nav-link">Glamping Pods</a>
+      <a href="index.html#coldplunge" class="nav-link">Cold Plunge</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="product-detail-page">
+    <div class="container">
+      <!-- Back Button -->
+      <a href="index.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+        </svg>
+        Back to Products
+      </a>
+
+      <div class="product-detail-grid">
+        <!-- Image Gallery -->
+        <div class="product-gallery">
+          <div class="main-image-container">
+            <img id="main-product-image" src="" alt="Product Image" class="main-product-image">
+            
+            <!-- Navigation Arrows -->
+            <button class="gallery-nav gallery-nav-prev" id="prev-image">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+              </svg>
+            </button>
+            <button class="gallery-nav gallery-nav-next" id="next-image">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Thumbnails -->
+          <div class="thumbnail-strip" id="thumbnail-strip"></div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <div class="product-header">
+            <span class="product-category-tag" id="product-category"></span>
+            <h1 class="product-title" id="product-title"></h1>
+          </div>
+
+          <p class="product-description" id="product-description"></p>
+
+          <!-- Features -->
+          <div class="features-section">
+            <h3 class="features-heading">Included Features:</h3>
+            <ul class="features-list" id="features-list"></ul>
+          </div>
+
+          <!-- Upgrades -->
+          <div class="upgrades-section" id="upgrades-section" style="display: none;">
+            <h3 class="upgrades-heading">Available Upgrades:</h3>
+            <div class="upgrades-list" id="upgrades-list"></div>
+          </div>
+
+          <!-- Price & Add to Cart -->
+          <div class="purchase-section">
+            <div class="price-display">
+              <p class="total-price" id="total-price"></p>
+              
+              <p class="price-breakdown" id="price-breakdown" style="display: none;"></p>
+            </div>
+
+            <button class="btn btn-gold btn-lg add-to-cart-btn" id="add-to-cart-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="M12 5v14"/>
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <h3 class="footer-logo">Hot Haus <span class="logo-gold">Saunas</span></h3>
+          <p class="footer-tagline">Premium wellness products delivered directly to your door. Transform your space with authentic Finnish design and exceptional craftsmanship.</p>
+        </div>
+        
+        <!-- Products -->
+        <div class="footer-links">
+          <h4>Products</h4>
+          <a href="index.html#saunas">Barrel Saunas</a>
+          <a href="index.html#glamping">Glamping Pods</a>
+          <a href="index.html#coldplunge">Cold Plunge</a>
+        </div>
+        
+        <!-- Contact -->
+        <div class="footer-links footer-contact">
+          <h4>Contact Us</h4>
+          <a href="mailto:info@hothaus.ie" class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            info@hothaus.ie
+          </a>
+          <a href="tel:+353123456789" class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +353 1 234 5678
+          </a>
+          <span class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Ireland
+          </span>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Hot Haus Saunas. All rights reserved.</p>
+        <p>Premium Wellness Products</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cart-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer" id="cart-footer" style="display: none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total">€0</span>
+      </div>
+      <button class="btn btn-gold btn-lg cart-checkout-btn" id="checkout-btn">Proceed to Order</button>
+    </div>
+  </div>
+
+  <!-- Order Form Modal -->
+  <div class="order-modal-overlay" id="order-modal-overlay"></div>
+  <div class="order-modal" id="order-modal">
+    <div class="order-modal-header">
+      <div class="order-modal-header-content">
+        <button class="order-back-btn" id="order-back-btn" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+          </svg>
+        </button>
+        <h2 id="order-modal-title">Choose Payment</h2>
+      </div>
+      <button class="order-close-btn" id="order-close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="order-modal-content">
+      <!-- Order Summary -->
+      <div class="order-summary" id="order-summary"></div>
+      
+      <!-- Payment Method Selection -->
+      <div class="payment-methods" id="payment-methods">
+        <h3>Choose Payment Method</h3>
+        <div class="payment-options">
+          <button class="payment-option" id="pay-card-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+            </svg>
+            <h4>Pay by Card</h4>
+            <p>Secure payment via Stripe</p>
+          </button>
+          <button class="payment-option" id="pay-bank-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/>
+            </svg>
+            <h4>Bank Transfer</h4>
+            <p>Submit order, pay via bank transfer</p>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Card Payment Form -->
+      <div class="card-payment-form" id="card-payment-form" style="display: none;">
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="card-email" placeholder="your@email.com" required>
+          <p class="form-hint">You'll enter shipping details on the Stripe checkout page</p>
+        </div>
+        <button class="btn btn-gold btn-lg" id="proceed-stripe-btn" style="width: 100%;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+          </svg>
+          Pay with Card
+        </button>
+      </div>
+      
+      <!-- Bank Transfer Form -->
+      <form class="bank-transfer-form" id="bank-transfer-form" style="display: none;">
+        <h3>Your Details</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="customer-name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="customer-email" placeholder="john@example.com" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Phone Number * <span class="label-hint">(we'll call to confirm)</span></label>
+          <input type="tel" id="customer-phone" placeholder="+353 1 234 5678" required minlength="7">
+        </div>
+        
+        <div class="form-group">
+          <label>Delivery Address *</label>
+          <textarea id="customer-address" placeholder="Full delivery address including Eircode/postcode" rows="3" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Additional Notes</label>
+          <textarea id="customer-notes" placeholder="Any special requirements or questions..." rows="3"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-gold btn-lg" style="width: 100%;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+          </svg>
+          Submit Order Request
+        </button>
+        
+        <p class="form-disclaimer">By submitting, you agree to be contacted regarding your order. We will confirm availability and arrange payment.</p>
+      </form>
+      
+      <!-- Success Message -->
+      <div class="order-success" id="order-success" style="display: none;">
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>Order Request Received!</h3>
+        <p>Your order is being processed. Our team will contact you shortly to confirm details and arrange payment.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Product galleries live here (edit paths only, no JS changes needed) -->
+  <!-- Product galleries live here (edit paths only, no JS changes needed) -->
+<div id="product-gallery-templates" hidden>
+
+  <!-- Barrel Saunas -->
+  <template data-product-gallery="sauna-micro">
+    <img src="img/Indexview/sauna/2MSaunatrans.webp" alt="2m Micro Sauna Front">
+    <img src="img/Indexview/sauna/2mSaunaLAYOUT.webp" alt="2m Micro Sauna Layout">
+    <img src="img/productview/optionfullglass.png" alt="optional upgrade full glass back">
+    <img src="img/productview/optionalwoodburn.png" alt="optional upgrade wood burning stove">
+
+  </template>
+
+  <template data-product-gallery="sauna-mini">
+    <img src="img/Indexview/sauna/2.5MSaunaTrans.webp" alt="2.5m Mini Sauna Front">
+    <img src="img/Indexview/sauna/2.5MSaunaLAYOUT.webp" alt="2.5m Mini Sauna Layout">
+    <img src="img/productview/optionfullglass.png" alt="optional upgrade full glass back">
+    <img src="img/productview/optionalwoodburn.png" alt="optional upgrade wood burning stove">
+  </template>
+
+  <template data-product-gallery="sauna-midi">
+    <img src="img/Indexview/sauna/3MSaunaTrans.webp" alt="3m Midi Sauna Front">
+    <img src="img/Indexview/sauna/3MSaunaLAYOUT.webp" alt="3m Midi Sauna Layout">
+    <img src="img/productview/optionfullglass.png" alt="optional upgrade full glass back">
+    <img src="img/productview/optionalwoodburn.png" alt="optional upgrade wood burning stove">
+  </template>
+
+  <template data-product-gallery="sauna-maxi">
+    <img src="img/Indexview/sauna/4MSaunaTrans.webp" alt="4m Maxi Sauna Front">
+    <img src="img/Indexview/sauna/4MSaunaLAYOUT.webp" alt="4m Maxi Sauna Layout">
+    <img src="img/productview/optionfullglass.png" alt="optional upgrade full glass back">
+    <img src="img/productview/optionalwoodburn.png" alt="optional upgrade wood burning stove">
+  </template>
+
+  <template data-product-gallery="sauna-grande">
+    <img src="img/Indexview/sauna/6MSAUNATrans.webp" alt="6m Grande Sauna Front">
+    <img src="img/Indexview/sauna/6MSaunaLAYOUT.webp" alt="6m Grande Sauna Layout">
+    <img src="img/productview/optionfullglass.png" alt="optional upgrade full glass back">
+    <img src="img/productview/optionalwoodburn.png" alt="optional upgrade wood burning stove">
+    <img src="img/productview/6mnopost.png" alt="4x6 side profile">
+
+  </template>
+
+  <!-- Cube Saunas -->
+  <template data-product-gallery="cube-1.7m">
+    <img src="img/Indexview/cubesauna/CS1.7MM.png" alt="1.7m Cube Sauna Front">
+    <img src="img/productview/cube1.7alt.jpeg" alt="1.7m cube sauna">
+    <img src="img/productview/cube1.7alt2normalnoglass.jpeg" alt="1.7m cube sauna">
+    <img src="img/productview/cubeinside.jpeg" alt="1.7m cube sauna">
+    <img src="img/productview/cubehalopt.png" alt="rear glass option">
+
+
+
+  </template>
+
+  <template data-product-gallery="cube-2.4m">
+    <img src="img/Indexview/cubesauna/CS2.4M.png" alt="2.4m Cube Sauna Front">
+    <img src="img/productview/cube2.4mside.jpeg" alt="2.4m cube sauna">
+    <img src="img/productview/cube2.4inside1.jpeg" alt="2.4m cube sauna">
+    <img src="img/productview/cube2.4inside2.jpeg" alt="2.4m cube sauna">
+    <img src="img/productview/cubehalopt.png" alt="rear glass option">
+
+  </template>
+
+  <template data-product-gallery="cube-3m">
+    <img src="img/Indexview/cubesauna/CS3M.png" alt="3m Cube Sauna Front">
+    <img src="img/productview/cube3malt.jpeg" alt="3m Cube Sauna">
+    <img src="img/productview/cube3malt1.png" alt="3m Cube Sauna">
+    <img src="img/productview/cube3mfront.jpeg" alt="3m Cube Sauna">
+    <img src="img/productview/cubehalopt.png" alt="rear glass option">
+
+
+
+
+  </template>
+
+  <!-- Glass / Deluxe Sauna -->
+  <template data-product-gallery="sauna-glass-framed">
+    <img src="img/Indexview/PremTran.png" alt="Glass Framed Deluxe Sauna">
+    <img src="img/productview/deluxbig.png" alt="Glass Framed Deluxe Sauna">
+    <img src="img/productview/deluxbig2.png" alt="Glass Framed Deluxe Sauna">
+    <img src="img/productview/delalt2.jpeg" alt="Glass Framed Deluxe Sauna">
+    <img src="img/productview/deltalt3.jpeg" alt="Glass Framed Deluxe Sauna">
+    <img src="img/productview/deluxphotobottemview.jpeg" alt="Glass Framed Deluxe Sauna">
+    <img src="img/productview/delalt.jpeg" alt="Glass Framed Deluxe Sauna">
+    <img src="img/productview/delalt1.jpeg" alt="Glass Framed Deluxe Sauna">
+  </template>
+
+  <!-- Glamping Pods -->
+  <template data-product-gallery="pod-3x3">
+    <img src="img/Indexview/gla/GLP3x3-Front.png" alt="3x3 Pod Front">
+    <img src="img/Indexview/gla/GLP3X3-Back.png" alt="3x3 Pod Rear">
+    <img src="img/Indexview/gla/3x3inside.png" >
+  </template>
+
+  <template data-product-gallery="pod-3x4">
+    <img src="img/Indexview/gla/GLP3x4-Front.png" alt="3x4 Pod Front">
+    <img src="img/Indexview/gla/GLP3X4-Back.png" alt="3x4 Pod Rear">
+    <img src="img/Indexview/gla/3x4-5inside.png" >
+  </template>
+
+  <template data-product-gallery="pod-3x5">
+    <img src="img/Indexview/gla/GLP3x4-Front.png" alt="3x5 Pod Front">
+    <img src="img/Indexview/gla/GLP3X4-Back.png" alt="3x5 Pod Rear">
+    <img src="img/Indexview/gla/3x4-5inside.png" >
+  </template>
+
+  <template data-product-gallery="pod-4x6">
+    <img src="img/Indexview/gla/GLP4x6-Front.png" alt="4x6 Pod Front">
+    <img src="img/Indexview/gla/GLP4x6-Back.png" alt="4x6 Pod Rear">
+    <img src="img/Indexview/gla/4x6inside.png" >
+    
+  </template>
+
+  <!-- Cold Plunge -->
+  <template data-product-gallery="coldplunge">
+    <img src="img/productview/plungefront.png" alt="Cold Plunge Tub">
+    <img src="img/productview/plung4.jpeg" alt="Cold Plunge Tub">
+    <img src="img/productview/plunge2.jpeg" alt="Cold Plunge Tub">
+    <img src="img/productview/plunge3.jpeg" alt="Cold Plunge Tub">
+    <img src="img/Indexview/SaunaPlungepoolsetup.jpeg" alt="">
+
+
+  </template>
+  <template data-product-gallery="hottub">
+    <img src="img/Indexview/ht/Hottub1.png" alt="Hot Tub">
+    <img src="img/Indexview/ht/hottublight2.png" alt="Hot Tub">
+
+  </template>
+
+</div>
+
+  <script src="script.js"></script>
+  <script src="product-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Cancelled - HotHaus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header" id="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo"><span class="logo-hot">Hot</span><span class="logo-haus">Haus</span></a>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container" style="max-width: 720px;">
+      <div class="section-header" style="text-align:left;">
+        <span class="section-tag">No worries</span>
+        <h1 class="section-title">Payment Cancelled</h1>
+        <p class="section-subtitle">Your payment was cancelled and no charge was made.</p>
+      </div>
+
+      <a class="btn btn-gold" href="index.html">Return to shop</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> HotHaus. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

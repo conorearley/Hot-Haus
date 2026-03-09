@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HotHaus – Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="index.html" class="logo">
+      <span class="logo-hot">Hot</span><span class="logo-haus">Haus</span>
+    </a>
+
+    <nav class="nav-desktop">
+      <a href="index.html#saunas" class="nav-link">Saunas</a>
+      <a href="index.html#glamping" class="nav-link">Glamping Pods</a>
+      <a href="index.html#coldplunge" class="nav-link">Cold Plunge</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+    </nav>
+  </div>
+</header>
+
+<main class="showcase-page">
+
+  <!-- SLIDER -->
+  <section class="showcase-hero">
+
+    <div class="slider">
+
+      <div class="slides">
+
+        <div class="slide active">
+          <img src="img/gallery/galleryno.png" alt="Barrel Sauna">
+          <div class="slide-content">
+            <h1>Scandinavian Craftsmanship</h1>
+            <p>Architectural wellness products designed for longevity and performance.</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="img/gallery/galleryno1.jpeg" alt="Sauna Interior">
+          <div class="slide-content">
+            <h1>Premium Choices</h1>
+            <p>A Bespoke installation to suit premium spaces.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="img/gallery/gal1.png" alt="Sauna Interior">
+          <div class="slide-content">
+            <h1>Precision Interiors</h1>
+            <p>Natural timber finishes engineered for heat efficiency and comfort.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="img/gallery/gal2.png" alt="Sauna Interior">
+          <div class="slide-content">
+            <h1>Precision Interiors</h1>
+            <p>Natural timber finishes engineered for heat efficiency and comfort.</p>
+          </div>
+        </div>
+        
+
+        <div class="slide">
+          <img src="img/gallery/galleryno3.jpeg" alt="Cold Plunge">
+          <div class="slide-content">
+            <h1>Performance Wellness</h1>
+            <p>Cold immersion systems crafted for resilience and recovery.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="slider-btn prev">&#10094;</button>
+      <button class="slider-btn next">&#10095;</button>
+
+      <!-- Dots -->
+      <div class="slider-dots"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO TEXT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Collection</span>
+        <h2 class="section-title">Built With Intention</h2>
+        <p class="section-subtitle">
+          Every HotHaus product is shaped by Nordic design principles — simplicity,
+          material honesty and structural integrity. We create wellness spaces
+          that feel architectural, not ornamental.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-bottom">
+    <p>&copy; <span id="current-year"></span> HotHaus. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  const dotsContainer = document.querySelector('.slider-dots');
+
+  let current = 0;
+  let interval;
+
+  function createDots() {
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if(index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+    document.querySelectorAll('.dot')[current].classList.add('active');
+  }
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+    updateDots();
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  function goToSlide(index) {
+    current = index;
+    showSlide(current);
+    resetInterval();
+  }
+
+  function startInterval() {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    startInterval();
+  }
+
+  nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+  prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+
+  createDots();
+  startInterval();
+
+  document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

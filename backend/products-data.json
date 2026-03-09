@@ -1,0 +1,435 @@
+{
+  "saunas": [
+    {
+      "id": "sauna-micro",
+      "name": "2m Micro Sauna",
+      "category": "sauna",
+      "price": 4994,
+      "description": "Perfect compact sauna for smaller spaces. Premium quality with authentic Finnish design.",
+      "features": [
+        "2m length",
+        "Fits 2-3 people",
+        "Premium spruce wood",
+        "Electric heater included"
+      ],
+      "image": "sauna-micro",
+      "upgrades": [
+        {
+          "id": "sauna-mini-round-glass",
+          "name": "Round Glass",
+          "price": 900
+        },
+        {
+          "id": "sauna-mini-half-glass",
+          "name": "Half Glass",
+          "price": 500
+        },
+        {
+          "id": "sauna-mini-wood-stove",
+          "name": "Wood Stove",
+          "price": 650
+        },
+        {
+          "id": "sauna-mini-external-painting",
+          "name": "External Painting",
+          "price": 450
+        },
+        {
+          "id": "sauna-mini-thermowood",
+          "name": "Thermowood Cladding",
+          "price": 750
+        }
+      ]
+    },
+    {
+      "id": "sauna-mini",
+      "name": "2.5m Mini Sauna",
+      "category": "sauna",
+      "price": 5290,
+      "description": "Perfect compact sauna for smaller spaces. Premium quality with authentic Finnish design.",
+      "features": [
+        "2.5m length",
+        "Fits 2-3 people",
+        "Premium spruce wood",
+        "Electric heater included"
+      ],
+      "image": "sauna-mini",
+      "upgrades": [
+        {
+          "id": "sauna-mini-round-glass",
+          "name": "Round Glass",
+          "price": 900
+        },
+        {
+          "id": "sauna-mini-half-glass",
+          "name": "Half Glass",
+          "price": 500
+        },
+        {
+          "id": "sauna-mini-wood-stove",
+          "name": "Wood Stove",
+          "price": 650
+        },
+        {
+          "id": "sauna-mini-external-painting",
+          "name": "External Painting",
+          "price": 450
+        },
+        {
+          "id": "sauna-mini-thermowood",
+          "name": "Thermowood Cladding",
+          "price": 750
+        }
+      ]
+    },
+    {
+      "id": "sauna-midi",
+      "name": "3.0m Midi Sauna",
+      "category": "sauna",
+      "price": 5840,
+      "description": "Ideal family sauna with comfortable space for relaxation and wellness.",
+      "features": [
+        "3.0m length",
+        "Fits 3-4 people",
+        "Premium spruce wood",
+        "Electric heater included"
+      ],
+      "image": "sauna-midi",
+      "upgrades": [
+        {
+          "id": "sauna-midi-round-glass",
+          "name": "Round Glass",
+          "price": 900
+        },
+        {
+          "id": "sauna-midi-half-glass",
+          "name": "Half Glass",
+          "price": 500
+        },
+        {
+          "id": "sauna-midi-wood-stove",
+          "name": "Wood Stove",
+          "price": 650
+        },
+        {
+          "id": "sauna-midi-external-painting",
+          "name": "External Painting",
+          "price": 450
+        },
+        {
+          "id": "sauna-midi-thermowood",
+          "name": "Thermowood Cladding",
+          "price": 960
+        }
+      ]
+    },
+    {
+      "id": "sauna-maxi",
+      "name": "4.0m Maxi Sauna",
+      "category": "sauna",
+      "price": 6930,
+      "description": "Spacious sauna for larger families or commercial use with ample room.",
+      "features": [
+        "4.0m length",
+        "Fits 5-6 people",
+        "Premium spruce wood",
+        "Electric heater included"
+      ],
+      "image": "sauna-maxi",
+      "upgrades": [
+        {
+          "id": "sauna-maxi-round-glass",
+          "name": "Round Glass",
+          "price": 900
+        },
+        {
+          "id": "sauna-maxi-half-glass",
+          "name": "Half Glass",
+          "price": 500
+        },
+        {
+          "id": "sauna-maxi-wood-stove",
+          "name": "Wood Stove",
+          "price": 650
+        },
+        {
+          "id": "sauna-maxi-external-painting",
+          "name": "External Painting",
+          "price": 750
+        },
+        {
+          "id": "sauna-maxi-thermowood",
+          "name": "Thermowood Cladding",
+          "price": 1230
+        }
+      ]
+    },
+    {
+      "id": "sauna-grande",
+      "name": "6.0m Grande Sauna",
+      "category": "sauna",
+      "price": 8690,
+      "description": "Our flagship luxury sauna with maximum space and premium features.",
+      "features": [
+        "6.0m length",
+        "Fits 8-10 people",
+        "Premium spruce wood",
+        "Electric heater included"
+      ],
+      "image": "sauna-grande",
+      "upgrades": [
+        {
+          "id": "sauna-grande-round-glass",
+          "name": "Round Glass",
+          "price": 900
+        },
+        {
+          "id": "sauna-grande-half-glass",
+          "name": "Half Glass",
+          "price": 500
+        },
+        {
+          "id": "sauna-grande-wood-stove",
+          "name": "Wood Stove",
+          "price": 650
+        },
+        {
+          "id": "sauna-grande-external-painting",
+          "name": "External Painting",
+          "price": 750
+        },
+        {
+          "id": "sauna-grande-thermowood",
+          "name": "Thermowood Cladding",
+          "price": 1660
+        }
+      ]
+    }
+  ],
+  "glamping": [
+    {
+      "id": "pod-3x3",
+      "name": "3m x 3m Pod",
+      "category": "glamping",
+      "price": 5930,
+      "description": "Cozy pod perfect for couples or a unique garden office space.",
+      "features": [
+        "3m x 3m floor space",
+        "Insulated walls",
+        "Double glazed windows",
+        "Electrical pack included"
+      ],
+      "image": "pod-3x3",
+      "upgrades": [
+        {
+          "id": "pod-3x3-assembly",
+          "name": "Pod Assembly",
+          "price": 720
+        },
+        {
+          "id": "pod-3x3-foundation",
+          "name": "Timber Frame & Black Pad Foundation",
+          "price": 630
+        },
+        {
+          "id": "pod-3x3-flooring",
+          "name": "Laminate Flooring",
+          "price": 350
+        }
+      ]
+    },
+    {
+      "id": "pod-3x4",
+      "name": "3m x 4m Pod",
+      "category": "glamping",
+      "price": 6710,
+      "description": "Popular mid-size pod with extra room for comfort and amenities.",
+      "features": [
+        "3m x 4m floor space",
+        "Insulated walls",
+        "Double glazed windows",
+        "Electrical pack included"
+      ],
+      "image": "pod-3x4",
+      "upgrades": [
+        {
+          "id": "pod-3x4-assembly",
+          "name": "Pod Assembly",
+          "price": 960
+        },
+        {
+          "id": "pod-3x4-foundation",
+          "name": "Timber Frame & Black Pad Foundation",
+          "price": 840
+        },
+        {
+          "id": "pod-3x4-flooring",
+          "name": "Laminate Flooring",
+          "price": 470
+        }
+      ]
+    },
+    {
+      "id": "pod-3x5",
+      "name": "3m x 5m Pod",
+      "category": "glamping",
+      "price": 8710,
+      "description": "Spacious pod ideal for small families or deluxe glamping experience.",
+      "features": [
+        "3m x 5m floor space",
+        "Insulated walls",
+        "Double glazed windows",
+        "Electrical pack included"
+      ],
+      "image": "pod-3x5",
+      "upgrades": [
+        {
+          "id": "pod-3x5-assembly",
+          "name": "Pod Assembly",
+          "price": 1200
+        },
+        {
+          "id": "pod-3x5-foundation",
+          "name": "Timber Frame & Black Pad Foundation",
+          "price": 970
+        },
+        {
+          "id": "pod-3x5-flooring",
+          "name": "Laminate Flooring",
+          "price": 585
+        }
+      ]
+    },
+    {
+      "id": "pod-4x6",
+      "name": "4m x 6m Pod",
+      "category": "glamping",
+      "price": 11180,
+      "description": "Our largest pod with maximum space for luxury accommodation.",
+      "features": [
+        "4m x 6m floor space",
+        "Insulated walls",
+        "Double glazed windows",
+        "Electrical pack included"
+      ],
+      "image": "pod-4x6",
+      "upgrades": [
+        {
+          "id": "pod-4x6-assembly",
+          "name": "Pod Assembly",
+          "price": 1800
+        },
+        {
+          "id": "pod-4x6-foundation",
+          "name": "Timber Frame & Black Pad Foundation",
+          "price": 1460
+        },
+        {
+          "id": "pod-4x6-flooring",
+          "name": "Laminate Flooring",
+          "price": 935
+        }
+      ]
+    }
+  ],
+  "coldplunge": {
+    "id": "cold-plunge",
+    "name": "Cold Plunge",
+    "category": "coldplunge",
+    "price": 1050,
+    "description": "Premium cold plunge tub for the ultimate recovery and wellness experience. Price coming soon.",
+    "features": [
+      "Premium wood construction",
+      "Insulated design",
+      "Easy drainage system",
+      "Temperature control"
+    ],
+    "image": "coldplunge"
+  },
+    "hottub": {
+    "id": "hot-tub",
+    "name": "Hot Tub",
+    "category": "hottub",
+    "price": 3500,
+    "description": "Traditional Scandinavian hot tub for year-round relaxation. Price coming soon.",
+    "features": [
+      "Wood-fired heating",
+      "Insulated construction",
+      "All-season use",
+      "Easy drainage system"
+    ],
+    "image": "hottub"
+  },
+  "glassSaunas": [
+    {
+      "id": "sauna-deluxe",
+      "name": "Deluxe Sauna",
+      "category": "sauna",
+      "description": "Our flagship bespoke sauna. Each Deluxe model is custom designed to suit your space, specification and vision.",
+      "features": [
+        "Full panoramic glass front",
+        "Architectural black frame",
+        "Premium timber interior",
+        "Fully bespoke specification"
+      ],
+      "image": "sauna-glass-framed",
+      "bespoke": true
+    }
+    ],
+    "cubeSaunas": [
+  {
+    "id": "cube-1.7m",
+    "name": "1.7m Cube Sauna",
+    "category": "sauna",
+    "price": 7490,
+    "description": "Minimalist cube sauna with clean architectural lines and premium timber finish.",
+    "features": [
+      "1.7m length",
+      "Modern flat roof",
+      "Panoramic front window",
+      "Electric heater included"
+    ],
+    "image": "cube-1.7m",
+    "upgrades": [
+      { "id": "cube-half-glass", "name": "Half Glass", "price": 800 },
+      { "id": "cube-full-glass", "name": "Full Glass", "price": 1600 }
+    ]
+  },
+  {
+    "id": "cube-2.4m",
+    "name": "2.4m Cube Sauna",
+    "category": "sauna",
+    "price": 8990,
+    "description": "Spacious cube sauna designed for contemporary outdoor spaces.",
+    "features": [
+      "2.4m length",
+      "Flat roof design",
+      "Full glass front",
+      "Premium insulation"
+    ],
+    "image": "cube-2.4m",
+    "upgrades": [
+      { "id": "cube-half-glass", "name": "Half Glass", "price": 800 },
+      { "id": "cube-full-glass", "name": "Full Glass", "price": 1600 }
+    ]
+  },
+  {
+    "id": "cube-3m",
+    "name": "3m Cube Sauna",
+    "category": "sauna",
+    "price": 10490,
+    "description": "Luxury cube sauna with expansive interior and striking exterior presence.",
+    "features": [
+      "3m length",
+      "Architectural design",
+      "Panoramic glass",
+      "High-end finish"
+    ],
+    "image": "cube-3m",
+    "upgrades": [
+      { "id": "cube-half-glass", "name": "Half Glass", "price": 800 },
+      { "id": "cube-full-glass", "name": "Full Glass", "price": 1600 }
+    ]
+  }
+]
+}

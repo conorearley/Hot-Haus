@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HotHaus - Premium Outdoor Living</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<div id="toast-container"></div>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-hot">Hot</span><span class="logo-haus">Haus</span>
+      </a>
+      
+      <nav class="nav-desktop">
+        <a href="#saunas" class="nav-link">Saunas</a>
+        <a href="#glamping" class="nav-link">Glamping Pods</a>
+        <a href="#coldplunge" class="nav-link">Cold Plunge</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="https://www.hothaussaunas.ie/" class="nav-link" target="_blank" rel="noopener">Partnerships</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-button" id="cart-toggle" aria-label="Open cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+          </svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+  <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+  </svg>
+  <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+  </svg>
+</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="nav-mobile" id="mobile-menu">
+      <a href="#saunas" class="nav-link">Saunas</a>
+      <a href="#glamping" class="nav-link">Glamping Pods</a>
+      <a href="#coldplunge" class="nav-link">Cold Plunge</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="https://www.hothaussaunas.ie/" class="nav-link" target="_blank" rel="noopener">Partnerships</a>
+
+    </nav>
+  </header>
+
+  <main id="main">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background">
+      <img src="img/hero-sauna.jpg" alt="Luxury Sauna" class="hero-image">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-tag">Premium Outdoor Living</span>
+      <h1 class="hero-title">Scandinavian Craftsmanship<br>Delivered to Your Door</h1>
+      <p class="hero-subtitle">Handcrafted barrel saunas, glamping pods, and cold plunge tubs built with Nordic expertise and premium materials.</p>
+      <div class="hero-buttons">
+        <a href="#saunas" class="btn btn-gold">Explore Collection</a>
+        <a href="#coldplunge" class="btn btn-outline">View Cold Plunge</a>
+      </div>
+    </div>
+  </section>
+  <!-- Partnerships Section - Premium -->
+  <section class="partnership-section">
+    <div class="container partnership-container">
+
+      <div class="partnership-grid">
+
+        <!-- Image -->
+        <div class="partnership-image">
+          <div class="installation-badge">
+            Hotel Installation
+          </div>
+          <img src="img/gallery/SaunaShowBackHot.png" alt="HotHaus Hotel Installation in Kerry">
+        </div>
+
+        <!-- Content -->
+        <div class="partnership-content">
+          <span class="section-tag">Hospitality & Commercial</span>
+
+          <h2 class="partnership-title">
+            Turn Wellness Into Revenue
+          </h2>
+
+          <p class="partnership-lead">
+            A fully installed HotHaus sauna — supplied to your venue with zero
+            upfront equipment cost.
+          </p>
+
+          <p class="partnership-text">
+            Our partnership model allows hotels, resorts, gyms and wellness
+            destinations to introduce a premium sauna experience without capital
+            expenditure. Guests book and pay per session, while profits are
+            shared under an agreed structure.
+          </p>
+
+          <div class="partnership-features">
+            <div class="feature-item">
+              ✔ Full installation & onboarding
+            </div>
+            <div class="feature-item">
+              ✔ Revenue-sharing model
+            </div>
+            <div class="feature-item">
+              ✔ Increased guest retention & upsell potential
+            </div>
+          </div>
+
+          <div class="partnership-actions">
+            <a href="https://www.hothaussaunas.ie/"
+              class="btn btn-gold btn-xl"
+              target="_blank"
+              rel="noopener">
+              Apply for Partnership
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Saunas Section -->
+  <section id="saunas" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Premium Wellness</span>
+        <h2 class="section-title">Barrel Saunas</h2>
+        <p class="section-subtitle">Authentic Finnish design meets premium craftsmanship</p>
+      </div>
+      <div class="product-grid product-grid-2" id="saunas-grid"></div>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <div class="section-header section-header-compact">
+        <span class="section-tag">Architectural Series</span>
+        <h3 class="section-title section-title-small">Cube Saunas</h3>
+        <p class="section-subtitle">Contemporary flat-roof saunas with bold modern design</p>
+      </div>
+
+      <div class="product-grid product-grid-2" id="cube-saunas-grid"></div>
+
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <div class="section-header section-header-compact">
+        <span class="section-tag">Modern Collection</span>
+        <h3 class="section-title section-title-small">Deluxe Sauna</h3>
+        <p class="section-subtitle">Premium panoramic sauna with modern glass front</p>
+      </div>
+
+<div class="product-grid product-grid-2" id="glass-saunas-grid"></div>
+
+    </div>
+  </section>
+  
+
+  <!-- Glamping Section -->
+  <section id="glamping" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Outdoor Living</span>
+        <h2 class="section-title">Glamping Pods</h2>
+        <p class="section-subtitle">Luxury accommodation or the perfect garden office</p>
+      </div>
+      <div class="product-grid product-grid-2" id="glamping-grid"></div>
+    </div>
+  </section>
+
+  <!-- Cold Plunge Section -->
+  <section id="coldplunge" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Recovery & Wellness</span>
+        <h2 class="section-title">Cold Plunge & Hot Tub</h2>
+        <p class="section-subtitle">Hot therapy and cold therapy recovery</p>
+      </div>
+      <div class="product-grid product-grid-2" id="coldplunge-grid"></div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-hot">Hot</span><span class="logo-haus">Haus</span>
+          </a>
+          <p class="footer-tagline">Premium outdoor living solutions crafted with Nordic expertise.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Products</h4>
+          <a href="#saunas">Barrel Saunas</a>
+          <a href="#glamping">Glamping Pods</a>
+          <a href="#coldplunge">Cold Plunge</a>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Shipping</a>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="#">FAQ</a>
+          <a href="#">Warranty</a>
+          <a href="#">Assembly Guide</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> HotHaus. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cart-close" aria-label="Close cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer" id="cart-footer" style="display: none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total">€0</span>
+      </div>
+      <button class="btn btn-gold btn-lg cart-checkout-btn" id="checkout-btn">Proceed to Order</button>
+    </div>
+  </div>
+
+<!-- Order Form Modal -->
+<div class="order-modal-overlay" id="order-modal-overlay"></div>
+<div class="order-modal" id="order-modal">
+  <div class="order-modal-header">
+    <div class="order-modal-header-content">
+      <button class="order-back-btn" id="order-back-btn" style="display: none;" aria-label="Back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+        </svg>
+      </button>
+      <h2 id="order-modal-title">Choose Payment</h2>
+    </div>
+    <button class="order-close-btn" id="order-close-btn" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="order-modal-content">
+    <div class="order-summary" id="order-summary"></div>
+
+    <div class="payment-methods" id="payment-methods">
+      <h3>Choose Payment Method</h3>
+      <div class="payment-options">
+        <button class="payment-option" id="pay-card-option" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+          </svg>
+          <h4>Pay by Card</h4>
+          <p>Secure payment via Stripe</p>
+        </button>
+        <button class="payment-option" id="pay-bank-option" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/>
+          </svg>
+          <h4>Bank Transfer</h4>
+          <p>Submit order, pay via bank transfer</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="card-payment-form" id="card-payment-form" style="display: none;">
+      <div class="form-group">
+        <label for="card-email">Email *</label>
+        <input type="email" id="card-email" placeholder="your@email.com" required autocomplete="email">
+        <p class="form-hint">You'll enter shipping details on the Stripe checkout page</p>
+      </div>
+      <button class="btn btn-gold btn-lg" id="proceed-stripe-btn" style="width: 100%;" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+        </svg>
+        Pay with Card
+      </button>
+    </div>
+
+    <form class="bank-transfer-form" id="bank-transfer-form" style="display: none;">
+      <h3>Your Details</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="customer-name">Full Name *</label>
+          <input type="text" id="customer-name" placeholder="John Smith" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="customer-email">Email *</label>
+          <input type="email" id="customer-email" placeholder="john@example.com" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="customer-phone">Phone Number * <span class="label-hint">(we'll call to confirm)</span></label>
+        <input type="tel" id="customer-phone" placeholder="+353 1 234 5678" required minlength="7" autocomplete="tel">
+      </div>
+
+      <div class="form-group">
+        <label for="customer-address">Delivery Address *</label>
+        <textarea id="customer-address" placeholder="Full delivery address including Eircode/postcode" rows="3" required autocomplete="street-address"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="customer-notes">Additional Notes</label>
+        <textarea id="customer-notes" placeholder="Any special requirements or questions..." rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold btn-lg" style="width: 100%;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+        </svg>
+        Submit Order Request
+      </button>
+
+      <p class="form-disclaimer">By submitting, you agree to be contacted regarding your order. We will confirm availability and arrange payment.</p>
+    </form>
+
+    <div class="order-success" id="order-success" style="display: none;">
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h3>Order Request Received!</h3>
+      <p>Your order is being processed. Our team will contact you shortly to confirm details and arrange payment.</p>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Product images live here (edit paths only, no JS changes needed) -->
+  <div id="product-image-templates" hidden>
+     <template data-product-image="sauna-micro">
+      <div class="product-image-wrapper">
+        <img class="primary-img"src="img/Indexview/sauna/2MSaunatrans.webp" alt="2m Micro Sauna">
+        <img class="hover-img layout-2m" src="img/Indexview/sauna/2mSaunaLAYOUT.webp" alt="2m Sauna layout">
+      </div>
+    </template>
+
+    <template data-product-image="sauna-mini">
+      <div class="product-image-wrapper">
+        <img class="primary-img"src="img/Indexview/sauna/2.5MSaunaTrans.webp" alt="2.5m Mini Sauna">
+        <img class="hover-img" src="img/Indexview/sauna/2.5MSaunaLAYOUT.webp" alt="2.5m Sauna layout">
+      </div>
+    </template>
+
+    <template data-product-image="sauna-midi">
+      <div class="product-image-wrapper">
+        <img class="primary-img"src="img/Indexview/sauna/3MSaunaTrans.webp" alt="3.0m Midi Sauna">
+        <img class="hover-img" src="img/Indexview/sauna/3MSaunaLAYOUT.webp" alt="3m Sauna layout">
+      </div>
+    </template>
+
+    <template data-product-image="sauna-maxi">
+      <div class="product-image-wrapper">
+        <img class="primary-img"src="img/Indexview/sauna/4MSaunaTrans.webp" alt="4.0m Maxi Sauna">
+        <img class="hover-img" src="img/Indexview/sauna/4MSaunaLAYOUT.webp" alt="4m Sauna layout">
+      </div>
+    </template>
+
+    <template data-product-image="sauna-grande">
+      <div class="product-image-wrapper">
+        <img class="primary-img"src="img/Indexview/sauna/6MSAUNATrans.webp" alt="6.0m Grande Sauna">
+        <img class="hover-img" src="img/Indexview/sauna/6MSaunaLAYOUT.webp" alt="6m Sauna layout">
+      </div>
+    </template>
+    
+    <template data-product-image="cube-1.7m">
+      <img src="img/Indexview/cubesauna/cube1.7mupdate.png" alt="1.7m Cube Sauna">
+    </template>
+
+    <template data-product-image="cube-2.4m">
+      <img src="img/Indexview/cubesauna/cube2.4mupdate.png" alt="2.4m Cube Sauna">
+    </template>
+
+    <template data-product-image="cube-3m">
+      <img src="img/Indexview/cubesauna/cube3mupdate.png" alt="3m Cube Sauna">
+    </template>
+
+    <template data-product-image="sauna-glass-framed">
+      <div class="product-image-wrapper">
+        <img class = "primary-img" src="img/productview/deluxbig2.png" alt="Glass Framed Sauna">
+        <img class = "hover-img" src="img/productview/deluxbig.png" alt="Glass Framed Sauna">
+      </div>
+    </template>
+
+    <!-- 3x3 Pod -->
+  <template data-product-image="pod-3x3">
+  <div class="product-image-wrapper">
+      <img class="primary-img" src="img/Indexview/gla/GLP3x3-Front.png" alt="3m x 3m Pod">
+      <img class="hover-img" src="img/Indexview/gla/GLP3X3-Back.png" alt="3m x 3m Pod alternate view">
+  </div>
+</template>
+
+  <!-- 3x4 Pod -->
+  <template data-product-image="pod-3x4">
+    <div class="product-image-wrapper">
+      <img class="primary-img" src="img/Indexview/gla/GLP3x4-Front.png" alt="3m x 4m Pod">
+      <img class="hover-img" src="img/Indexview/gla/GLP3X4-Back.png" alt="3m x 4m Pod alternate view">
+    </div>
+  </template>
+
+  <!-- 3x5 Pod -->
+  <template data-product-image="pod-3x5">
+    <div class="product-image-wrapper">
+      <img class="primary-img" src="img/Indexview/gla/GLP3x4-Front.png" alt="3m x 5m Pod">
+      <img class="hover-img" src="img/Indexview/gla/GLP3X4-Back.png" alt="3m x 5m Pod alternate view">
+    </div>
+  </template>
+
+  <!-- 4x6 Pod -->
+  <template data-product-image="pod-4x6">
+    <div class="product-image-wrapper">
+      <img class="primary-img" src="img/Indexview/gla/GLP4x6-Front.png" alt="4m x 6m Pod">
+      <img class="hover-img" src="img/Indexview/gla/GLP4x6-Back.png" alt="4m x 6m Pod alternate view">
+    </div>
+  </template>
+  <template data-product-image="hottub">
+      <img src="img/Indexview/ht/hottubback.png" alt="Hot Tub">
+    </template>
+    <template data-product-image="coldplunge">
+      <img src="img/Indexview/ht/plungefront (2).png" alt="Cold Plunge">
+    </template>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

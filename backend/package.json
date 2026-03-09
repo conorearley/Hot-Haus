@@ -1,0 +1,15 @@
+{
+  "name": "hothaus-shop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.16.0",
+    "stripe": "^16.12.0"
+  }
+}

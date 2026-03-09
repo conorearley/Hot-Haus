@@ -61,6 +61,7 @@
       if (!res.ok) throw new Error(await res.text());
 
       const data = await res.json();
+      console.log('invoice status response:', data);
 
       if (data.status === 'ready' && data.url) {
         statusEl.textContent = 'Invoice ready.';
@@ -79,17 +80,15 @@
   }
 
   async function pollInvoice() {
-    const done = await checkInvoice();
-    if (done) return;
+    const first = await checkInvoice();
+    if (first) return;
 
     let attempts = 0;
-    const maxAttempts = 20;
-
     const timer = setInterval(async () => {
       attempts++;
       const ready = await checkInvoice();
 
-      if (ready || attempts >= maxAttempts) {
+      if (ready || attempts >= 20) {
         clearInterval(timer);
         if (!ready) {
           statusEl.textContent = 'Invoice is still being generated. Please refresh in a moment.';

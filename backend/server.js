@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || '';
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
 const PUBLIC_URL = process.env.PUBLIC_URL || 'http://localhost:4242';
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:4242';
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://hothaus.netlify.app';
 
 const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: '2025-01-27.acacia', maxNetworkRetries: 3 });
 

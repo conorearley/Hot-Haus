@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', function() {
  * Frontend calls POST /create-checkout-session with the cart + email
  * Server returns { url } to redirect the customer.
  */
-const API_BASE = 'https://hot-haus.onrender.com';
+const API_BASE = 'https://api.hothaus.ie';
 
 
 async function startStripeCheckout(email) {

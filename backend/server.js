@@ -245,17 +245,21 @@ const invoiceIndexPath = path.join(invoicesDir, 'index.json');
 
 function loadInvoiceIndex() {
   try {
-    return JSON.parse(fs.readFileSync(invoiceIndexPath, 'utf8'));
-  } catch {
+    const raw = fs.readFileSync(invoiceIndexPath, 'utf8');
+    console.log('Loaded invoice index from:', invoiceIndexPath);
+    return JSON.parse(raw);
+  } catch (err) {
+    console.log('Could not load invoice index:', invoiceIndexPath, err.message);
     return {};
   }
 }
 
 function saveInvoiceIndex(idx) {
   fs.writeFileSync(invoiceIndexPath, JSON.stringify(idx, null, 2));
+  console.log('Saved invoice index to:', invoiceIndexPath);
+  console.log('Saved invoice index keys:', Object.keys(idx));
 }
 app.get('/invoice', (req, res) => {
-
   const sessionId = String(req.query.session_id || '');
 
   if (!sessionId) {
@@ -265,12 +269,14 @@ app.get('/invoice', (req, res) => {
   const idx = loadInvoiceIndex();
   const record = idx[sessionId];
 
+  console.log('Invoice lookup sessionId:', sessionId);
+  console.log('Invoice record found:', record);
+
   if (record?.pdfFile) {
     return res.json({ status: 'ready', url: `${PUBLIC_URL}/invoices/${record.pdfFile}` });
   }
 
   return res.json({ status: 'pending' });
-
 });
 /* ---------------- WEBHOOK ---------------- */
 
@@ -357,13 +363,16 @@ await generateInvoicePdf({
 
       const idx = loadInvoiceIndex();
 
-          idx[session.id] = {
-            pdfFile,
-            invoiceNumber,
-            createdAt: new Date().toISOString()
-          };
+      idx[session.id] = {
+        pdfFile,
+        invoiceNumber,
+        createdAt: new Date().toISOString()
+      };
 
-          saveInvoiceIndex(idx);
+      saveInvoiceIndex(idx);
+
+      console.log('Saved invoice entry for session:', session.id);
+      console.log('Saved invoice entry value:', idx[session.id]);
       const publicInvoiceUrl = `${PUBLIC_URL}/invoices/${pdfFile}`;
 
       const customerEmail =

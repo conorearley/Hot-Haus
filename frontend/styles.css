@@ -2355,3 +2355,149 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 }
+.deluxe-detail-page .product-detail-page {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--background)),
+    hsla(var(--gold), 0.04)
+  );
+}
+
+.deluxe-detail-page .product-detail-grid {
+  gap: 3rem;
+}
+
+.deluxe-detail-page .main-image-container {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--card)),
+    hsla(var(--gold), 0.06)
+  );
+  border: 1px solid hsla(var(--gold), 0.25);
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+}
+
+.deluxe-detail-page .main-product-image {
+  padding: 1rem;
+}
+
+.deluxe-detail-page .product-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.deluxe-detail-page .product-description {
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.deluxe-detail-page .product-info {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--card)),
+    hsla(var(--gold), 0.03)
+  );
+  border: 1px solid hsla(var(--gold), 0.18);
+  border-radius: 1.25rem;
+  padding: 2rem;
+}
+
+.deluxe-detail-page .bespoke-box {
+  margin-top: 0;
+  padding: 2.25rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    rgba(212,162,77,0.12),
+    rgba(212,162,77,0.03)
+  );
+  border: 1px solid rgba(212,162,77,0.32);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+.deluxe-detail-page .bespoke-box h3 {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .deluxe-detail-page .product-info {
+    padding: 1.25rem;
+  }
+
+  .deluxe-detail-page .product-title {
+    font-size: 2.2rem;
+  }
+
+  .deluxe-detail-page .main-image-container {
+    min-height: 320px;
+  }
+
+  .deluxe-detail-page .bespoke-box {
+    padding: 1.5rem;
+  }
+}
+.product-price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.klarna-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.4rem 0.7rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 184, 202, 0.18),
+    rgba(255, 184, 202, 0.08)
+  );
+  border: 1px solid rgba(255, 184, 202, 0.35);
+}
+
+.klarna-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  background: #ffb3c7;
+  color: #111;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.klarna-text {
+  font-size: 0.78rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1;
+}
+
+.klarna-text strong {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+}
+
+.klarna-inline-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 184, 202, 0.2),
+    rgba(212, 162, 77, 0.08)
+  );
+  border-color: rgba(212, 162, 77, 0.22);
+}
+
+@media (max-width: 768px) {
+  .product-card-footer {
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .klarna-inline {
+    flex-wrap: wrap;
+  }
+}

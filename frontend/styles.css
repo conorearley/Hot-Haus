@@ -2262,3 +2262,96 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
   }
 }
+@media (max-width: 768px) {
+  .product-detail-page {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .product-detail-grid {
+    gap: 1.5rem;
+  }
+
+  .back-button {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .main-image-container {
+    aspect-ratio: 1 / 1;
+    min-height: 300px;
+  }
+
+  .main-product-image {
+    object-fit: contain;
+    padding: 0.5rem;
+  }
+
+  .gallery-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gallery-nav-prev {
+    left: 0.5rem;
+  }
+
+  .gallery-nav-next {
+    right: 0.5rem;
+  }
+
+  .thumbnail-strip {
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .thumbnail {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 auto;
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-info {
+    gap: 1rem;
+  }
+
+  .product-title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .product-description {
+    font-size: 1rem;
+  }
+
+  .features-list,
+  .upgrades-list {
+    gap: 0.75rem;
+  }
+
+  .purchase-section {
+    padding: 1rem;
+  }
+
+  .price-display {
+    gap: 0.5rem;
+  }
+
+  .total-price {
+    font-size: 2rem;
+  }
+
+  .btn-lg,
+  .purchase-section .btn,
+  .purchase-section button {
+    width: 100%;
+  }
+}

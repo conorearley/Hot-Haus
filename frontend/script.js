@@ -287,8 +287,6 @@ function getCartTotal() {
 }
 
 function renderProductCard(product) {
-  const isPriceTBD = product.price === 0;
-
   const template = document.querySelector(
     `#product-image-templates template[data-product-image="${product.image}"]`
   );
@@ -298,6 +296,12 @@ function renderProductCard(product) {
     : `<img src="img/placeholder.jpg" alt="${product.name}">`;
 
   const isPremium = product.id === "sauna-deluxe";
+  const isPriceTBD = product.price === 0 || product.price == null;
+  const hidePrice = product.id === "sauna-deluxe";
+  const klarnaMonths = 48;
+  const klarnaMonthly = !isPriceTBD
+    ? Math.round(product.price / klarnaMonths)
+    : 0;
 
   return `
     <div class="product-card ${isPremium ? 'product-card-premium' : ''}"
@@ -306,11 +310,12 @@ function renderProductCard(product) {
       <div class="product-card-image ${isPremium ? 'premium-image' : ''}">
         ${imageHTML}
         ${!isPremium ? `
-        <div class="product-card-image-overlay"></div>
-        <div class="product-card-image-content">
-          <span class="category-tag">${product.category}</span>
-          <h3>${product.name}</h3>
-        </div>` : ''}
+          <div class="product-card-image-overlay"></div>
+          <div class="product-card-image-content">
+            <span class="category-tag">${product.category}</span>
+            <h3>${product.name}</h3>
+          </div>
+        ` : ''}
       </div>
 
       <div class="product-card-content ${isPremium ? 'premium-content' : ''}">
@@ -322,15 +327,25 @@ function renderProductCard(product) {
         <p class="product-card-description">${product.description}</p>
 
         <div class="product-card-footer">
-          <span class="product-price">
-            ${isPriceTBD ? 'Price TBD' : `from €${product.price.toLocaleString()}`}
-          </span>
+          <div class="product-price-block">
+            ${hidePrice ? '' : `
+              <span class="product-price">
+                ${isPriceTBD ? 'Price TBD' : `from €${product.price.toLocaleString()}`}
+              </span>
+            `}
+
+            ${!hidePrice && !isPriceTBD ? `
+              <div class="klarna-inline ${isPremium ? 'klarna-inline-premium' : ''}">
+                <span class="klarna-pill">Klarna</span>
+                <span class="klarna-text">
+                  from <strong>€${klarnaMonthly.toLocaleString()}</strong>/mo
+                </span>
+              </div>
+            ` : ''}
+          </div>
+
           <span class="view-details">
             View Details
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-            </svg>
           </span>
         </div>
       </div>

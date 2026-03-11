@@ -356,19 +356,16 @@ function renderProductDetail() {
 // Add to cart handler
 function handleAddToCart() {
   if (!currentProduct || currentProduct.price === 0) return;
-  
-  // Get existing cart
+
   let cart = JSON.parse(localStorage.getItem('hothaus-cart') || '[]');
-  
-  // Create upgrade IDs array
+
   const upgradeIds = selectedUpgrades.map(u => u.id).sort().join(',');
-  
-  // Check if same configuration exists
+
   const existingIndex = cart.findIndex(item => {
     const existingUpgradeIds = (item.selectedUpgradeIds || []).sort().join(',');
     return item.productId === currentProduct.id && existingUpgradeIds === upgradeIds;
   });
-  
+
   if (existingIndex >= 0) {
     cart[existingIndex].quantity += 1;
   } else {
@@ -378,25 +375,20 @@ function handleAddToCart() {
       selectedUpgradeIds: selectedUpgrades.map(u => u.id)
     });
   }
-  
-    localStorage.setItem('hothaus-cart', JSON.stringify(cart));
 
-  // keep any other pages / code in sync
-  window.cart = cart;
+  localStorage.setItem('hothaus-cart', JSON.stringify(cart));
 
-  // update cart count in header
-  if (typeof window.updateCartCount === 'function') {
+  if (window.updateCartCount) {
     window.updateCartCount();
   }
 
-  // classy toast
   const upgradeCount = selectedUpgrades.length;
   showToast(
     upgradeCount
       ? `Added to cart — ${currentProduct.name} (${upgradeCount} upgrade${upgradeCount === 1 ? '' : 's'})`
       : `Added to cart — ${currentProduct.name}`
   );
-  // Show feedback
+
   const btn = document.getElementById('add-to-cart-btn');
   const originalHTML = btn.innerHTML;
   btn.innerHTML = `
@@ -406,7 +398,7 @@ function handleAddToCart() {
     Added to Cart
   `;
   btn.disabled = true;
-  
+
   setTimeout(() => {
     btn.innerHTML = originalHTML;
     if (currentProduct.price > 0) {
@@ -414,7 +406,6 @@ function handleAddToCart() {
     }
   }, 2000);
 }
-
 // Get cart total (for order modal)
 function getCartTotal() {
   const cart = JSON.parse(localStorage.getItem('hothaus-cart') || '[]');

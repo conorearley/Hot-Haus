@@ -328,6 +328,7 @@ function renderProductDetail() {
   updatePrice();
 
     if (currentProduct.bespoke) {
+    document.body.classList.add('deluxe-detail-page');
     const upgradesSection = document.getElementById('upgrades-section');
     const purchaseSection = document.querySelector('.purchase-section');
 

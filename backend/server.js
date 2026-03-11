@@ -209,16 +209,19 @@ app.post('/create-checkout-session', async (req, res) => {
         Number(product.price) +
         upgrades.reduce((s,u)=>s+Number(u.price),0);
 
-      return {
-        quantity: item.quantity || 1,
-        price_data: {
-          currency: 'eur',
-          unit_amount: Math.round(unit * 100),
-          product_data: {
-            name: product.name,description: upgrades.map(u => `${u.name} (+€${u.price})`).join(", ")
-          }
+      const upgradeDescription = upgrades.map(u => `${u.name} (+€${u.price})`).join(', ');
+
+    return {
+      quantity: item.quantity || 1,
+      price_data: {
+        currency: 'eur',
+        unit_amount: Math.round(unit * 100),
+        product_data: {
+          name: product.name,
+          ...(upgradeDescription ? { description: upgradeDescription } : {})
         }
-      };
+      }
+    };
 
     });
 

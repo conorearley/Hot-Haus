@@ -7,7 +7,7 @@ const products = {
   category: 'sauna',
   price: 4700,
   description: 'Compact entry sauna designed for small gardens and tight spaces.',
-  features: ['2.0m length', 'Fits 1-2 people', 'Premium spruce wood', 'Electric heater included'],
+  features: ['2.0m length', 'Fits 2 people', 'Premium spruce wood', 'Electric heater included'],
   image: 'sauna-micro',
   upgrades: [
     { id: 'sauna-micro-round-glass', name: 'Round Glass', price: 900 },
@@ -23,7 +23,7 @@ const products = {
       category: 'sauna',
       price: 5590,
       description: 'Perfect compact sauna for smaller spaces. Premium quality with authentic Finnish design.',
-      features: ['2.5m length', 'Fits 2-3 people', 'Premium spruce wood', 'Electric heater included'],
+      features: ['2.5m length', 'Fits 4 people', 'Premium spruce wood', 'Electric heater included'],
       image: 'sauna-mini',
       upgrades: [
         { id: 'sauna-mini-round-glass', name: 'Round Glass', price: 900 },
@@ -39,7 +39,7 @@ const products = {
       category: 'sauna',
       price: 6140,
       description: 'Ideal family sauna with comfortable space for relaxation and wellness.',
-      features: ['3.0m length', 'Fits 3-4 people', 'Premium spruce wood', 'Electric heater included'],
+      features: ['3.0m length', 'Fits 6 people', 'Premium spruce wood', 'Electric heater included'],
       image: 'sauna-midi',
       upgrades: [
         { id: 'sauna-midi-round-glass', name: 'Round Glass', price: 900 },
@@ -55,7 +55,7 @@ const products = {
       category: 'sauna',
       price: 7230,
       description: 'Spacious sauna for larger families or commercial use with ample room.',
-      features: ['4.0m length', 'Fits 5-6 people', 'Premium spruce wood', 'Electric heater included'],
+      features: ['4.0m length', 'Fits 8 people', 'Premium spruce wood', 'Electric heater included'],
       image: 'sauna-maxi',
       upgrades: [
         { id: 'sauna-maxi-round-glass', name: 'Round Glass', price: 900 },
@@ -71,7 +71,7 @@ const products = {
       category: 'sauna',
       price: 8990,
       description: 'Our flagship luxury sauna with maximum space and premium features.',
-      features: ['6.0m length', 'Fits 8-10 people', 'Premium spruce wood', 'Electric heater included'],
+      features: ['6.0m length', 'Fits 10 people', 'Premium spruce wood', 'Electric heater included'],
       image: 'sauna-grande',
       upgrades: [
         { id: 'sauna-grande-round-glass', name: 'Round Glass', price: 900 },
